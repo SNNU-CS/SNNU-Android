@@ -2,8 +2,12 @@ package io.github.zhaoqi99.snnu_android;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,11 +17,22 @@ import android.widget.Toast;
 
 import com.stephentuso.welcome.WelcomeHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class MainActivity extends AppCompatActivity {
+
     WelcomeHelper welcomeScreen;
     NavigationView navigationView;
     DrawerLayout drawerLayout;
     Toolbar mToolBar;
+
+    TabLayout mtablayout;
+    private mViewPagerFragmentAdapter mAdapter;
+    private List<String> mTabTitleList;
+    ViewPager mViewPager;
+    private List<Fragment> mFragmentList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = this.findViewById(R.id.drawer_layout);
         mToolBar = this.findViewById(R.id.mToolBar);
         navigationView=this.findViewById(R.id.navigation_view);
+        mtablayout=this.findViewById(R.id.tablayout);
+        mViewPager=this.findViewById(R.id.mViewPager);
 
         ActionBarDrawerToggle mDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout,
                 mToolBar, 0, 0);
@@ -48,6 +65,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        initFragmentList();
+        initTabTitleList();
+
+        mAdapter = new mViewPagerFragmentAdapter(getSupportFragmentManager(), mFragmentList,mTabTitleList);
+        mViewPager.setAdapter(mAdapter);
+        mtablayout.setupWithViewPager(mViewPager);
     }
 
     @Override
@@ -56,25 +79,28 @@ public class MainActivity extends AppCompatActivity {
         welcomeScreen.onSaveInstanceState(outState);
     }
 
-
-    @SuppressWarnings("StatementWithEmptyBody")
-    public boolean onNavigationItemSelected(MenuItem item)
-    {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
+    public void initFragmentList(){
+        mFragmentList = new ArrayList<Fragment>();
+        mFragmentList.add(new Tab());
+        mFragmentList.add(new Tab());
     }
 
-    @Override
-    public void onBackPressed()
-    {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
+
+    public void initTabTitleList() {
+        mTabTitleList = new ArrayList<String>();
+        mTabTitleList.add("新闻");
+        mTabTitleList.add("通知");
     }
+
+//    @Override
+//    public void onBackPressed()
+//    {
+//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+//        if (drawer.isDrawerOpen(GravityCompat.START)) {
+//            drawer.closeDrawer(GravityCompat.START);
+//        } else {
+//            super.onBackPressed();
+//        }
+//    }
 }
+

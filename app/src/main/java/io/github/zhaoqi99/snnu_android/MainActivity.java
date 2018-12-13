@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         welcomeScreen = new WelcomeHelper(this, MyWelcomeActivity.class);
         welcomeScreen.show(savedInstanceState);
-
         drawerLayout = this.findViewById(R.id.drawer_layout);
         mToolBar = this.findViewById(R.id.mToolBar);
         navigationView=this.findViewById(R.id.navigation_view);
@@ -53,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout.addDrawerListener(mDrawerToggle);
         mDrawerToggle.syncState();        // 添加此句，toolbar左上角显示开启侧边栏图标
 
+        //侧栏菜单按钮事件
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -65,22 +65,11 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-
-        initFragmentList();
-        initTabTitleList();
-        mAdapter = new mViewPagerFragmentAdapter(getSupportFragmentManager(), mFragmentList,mTabTitleList);
-        mViewPager.setAdapter(mAdapter);
-        tablayout.setupWithViewPager(mViewPager);
-
+        InitTab();
         setSupportActionBar(mToolBar);
     }
 
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        welcomeScreen.onSaveInstanceState(outState);
-    }
-
+    //初始化tab
     public void initFragmentList(){
         mFragmentList = new ArrayList<Fragment>();
         mFragmentList.add(new Tab());
@@ -93,12 +82,27 @@ public class MainActivity extends AppCompatActivity {
         mTabTitleList.add("通知");
     }
 
+    void InitTab(){
+        initFragmentList();
+        initTabTitleList();
+        mAdapter = new mViewPagerFragmentAdapter(getSupportFragmentManager(), mFragmentList,mTabTitleList);
+        mViewPager.setAdapter(mAdapter);
+        tablayout.setupWithViewPager(mViewPager);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        welcomeScreen.onSaveInstanceState(outState);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar_menu,menu);
         return true;
     }
 
+    //ToolBar按钮事件
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

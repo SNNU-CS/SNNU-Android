@@ -51,7 +51,7 @@ public class NewsFragment extends Fragment {
         mTabTitleList.add("新闻");
         mTabTitleList.add("通知");
 
-        mAdapter = new mViewPagerFragmentAdapter(getActivity().getSupportFragmentManager(), mFragmentList,mTabTitleList);
+        mAdapter = new mViewPagerFragmentAdapter(getChildFragmentManager(), mFragmentList,mTabTitleList);
         mViewPager.setAdapter(mAdapter);
         tablayout.setupWithViewPager(mViewPager);
     }

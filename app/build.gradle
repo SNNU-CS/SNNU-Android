@@ -30,4 +30,5 @@ dependencies {
     implementation 'com.stephentuso:welcome:1.4.1'
     implementation 'com.android.support:design:26.1.0'
     implementation 'com.chanven.lib:cptr:1.1.0'
+    implementation 'com.github.medyo:android-about-page:1.2.4'
 }

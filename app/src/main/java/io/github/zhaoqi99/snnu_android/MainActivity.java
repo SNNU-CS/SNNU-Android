@@ -1,5 +1,6 @@
 package io.github.zhaoqi99.snnu_android;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -57,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.navigation_item_lib:
                         break;
                     case R.id.navigation_item_jwc:
+                        //switchToJwc();
+                        Intent intent=new Intent(MainActivity.this,LoginActivity.class);
+                        startActivity(intent);
                         break;
                     case R.id.navigation_item_about:
                         switchToAbout();
@@ -118,6 +122,10 @@ public class MainActivity extends AppCompatActivity {
 //        mToolbar.setTitle(R.string.navigation_book);
     }
     private void switchToCard() {
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_content,new CardFragment() ).commit();
+//        mToolbar.setTitle(R.string.navigation_book);
+    }
+    private void switchToJwc() {
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_content,new CardFragment() ).commit();
 //        mToolbar.setTitle(R.string.navigation_book);
     }

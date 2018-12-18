@@ -325,8 +325,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 LoginResult result1= gson.fromJson(result,LoginResult.class);
                 if(result1.getStatus()!=200)
                     return false;
-                String ss=httprequest.httpRequest("http://api.zhaoqi.vip/api/v1/urp/getCourses");
-                String a="";
             }catch (Exception e){
                 return false;
             }

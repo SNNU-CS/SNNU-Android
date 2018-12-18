@@ -58,9 +58,9 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.navigation_item_lib:
                         break;
                     case R.id.navigation_item_jwc:
-                        //switchToJwc();
                         Intent intent=new Intent(MainActivity.this,LoginActivity.class);
                         startActivity(intent);
+                        switchToJwc();
                         break;
                     case R.id.navigation_item_about:
                         switchToAbout();
@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
 //        mToolbar.setTitle(R.string.navigation_book);
     }
     private void switchToJwc() {
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_content,new CardFragment() ).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_content,new JwcFragment() ).commit();
 //        mToolbar.setTitle(R.string.navigation_book);
     }
 //    @Override

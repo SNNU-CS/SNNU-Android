@@ -2,12 +2,8 @@ package io.github.zhaoqi99.snnu_android;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,10 +14,6 @@ import android.widget.Toast;
 
 import com.stephentuso.welcome.WelcomeHelper;
 
-import java.util.ArrayList;
-import java.util.List;
-
-
 public class MainActivity extends AppCompatActivity {
 
     WelcomeHelper welcomeScreen;
@@ -29,29 +21,24 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     Toolbar mToolBar;
 
-    TabLayout tablayout;
-    private mViewPagerFragmentAdapter mAdapter;
-    private List<String> mTabTitleList;
-    ViewPager mViewPager;
-    private List<Fragment> mFragmentList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         welcomeScreen = new WelcomeHelper(this, MyWelcomeActivity.class);
         welcomeScreen.show(savedInstanceState);
+
         drawerLayout = this.findViewById(R.id.drawer_layout);
         mToolBar = this.findViewById(R.id.mToolBar);
         navigationView=this.findViewById(R.id.navigation_view);
-        tablayout=this.findViewById(R.id.tablayout);
-        mViewPager=this.findViewById(R.id.mViewPager);
 
         ActionBarDrawerToggle mDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout,
                 mToolBar, 0, 0);
         drawerLayout.addDrawerListener(mDrawerToggle);
         mDrawerToggle.syncState();        // 添加此句，toolbar左上角显示开启侧边栏图标
-
         //侧栏菜单按钮事件
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -59,36 +46,20 @@ public class MainActivity extends AppCompatActivity {
                 switch (menuItem.getItemId()) {
                     case R.id.navigation_item_home:
                         Toast.makeText(MainActivity.this, "x", Toast.LENGTH_SHORT).show();
+                        switchToNews();
+                        break;
+                    case R.id.navigation_item_about:
+                        switchToAbout();
                         break;
                 }
                 drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
             }
         });
-        InitTab();
         setSupportActionBar(mToolBar);
+        switchToAbout();
     }
 
-    //初始化tab
-    public void initFragmentList(){
-        mFragmentList = new ArrayList<Fragment>();
-        mFragmentList.add(new Tab());
-        mFragmentList.add(new Tab());
-    }
-
-    public void initTabTitleList() {
-        mTabTitleList = new ArrayList<String>();
-        mTabTitleList.add("新闻");
-        mTabTitleList.add("通知");
-    }
-
-    void InitTab(){
-        initFragmentList();
-        initTabTitleList();
-        mAdapter = new mViewPagerFragmentAdapter(getSupportFragmentManager(), mFragmentList,mTabTitleList);
-        mViewPager.setAdapter(mAdapter);
-        tablayout.setupWithViewPager(mViewPager);
-    }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -120,6 +91,14 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    private void switchToAbout() {
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, new AboutFragment()).commit();
+//        mToolbar.setTitle(R.string.navigation_book);
+    }
+    private void switchToNews() {
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, new NewsFragment()).commit();
+//        mToolbar.setTitle(R.string.navigation_book);
+    }
 //    @Override
 //    public void onBackPressed()
 //    {

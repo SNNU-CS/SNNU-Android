@@ -5,26 +5,26 @@
     <group android:checkableBehavior="single">
         <item
             android:checked="true"
-            android:id="@+id/navigation_item_home"
+            android:id="@+id/navigation_item_notice"
             android:icon="@drawable/iconfont_home"
-            android:title="首页" />
+            android:title="通知" />
         <item
-            android:id="@+id/navigation_item_ganhuo"
+            android:id="@+id/navigation_item_news"
 
             android:icon="@drawable/iconfont_home"
-            android:title="课程表" />
+            android:title="新闻" />
         <item
-            android:id="@+id/navigation_item_blog"
+            android:id="@+id/navigation_item_jwc"
+            android:icon="@drawable/iconfont_home"
+            android:title="教务处" />
+        <item
+            android:id="@+id/navigation_item_lib"
+            android:icon="@drawable/iconfont_home"
+            android:title="预约到馆" />
+        <item
+            android:id="@+id/navigation_card"
             android:icon="@drawable/iconfont_home"
             android:title="校园卡" />
-        <item
-            android:id="@+id/navigation_item_custom_view"
-            android:icon="@drawable/iconfont_home"
-            android:title="自定义View" />
-        <item
-            android:id="@+id/navigation_item_snackbar"
-            android:icon="@drawable/iconfont_home"
-            android:title="Snackbar演示" />
 
         <item
             android:id="@+id/navigation_item_about"

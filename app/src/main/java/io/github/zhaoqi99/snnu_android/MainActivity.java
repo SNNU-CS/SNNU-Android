@@ -44,8 +44,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
-                    case R.id.navigation_item_home:
+                    case R.id.navigation_item_notice:
                         Toast.makeText(MainActivity.this, "x", Toast.LENGTH_SHORT).show();
+                        switchToNotice();
+                        break;
+                    case R.id.navigation_item_news:
                         switchToNews();
                         break;
                     case R.id.navigation_item_about:
@@ -57,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         setSupportActionBar(mToolBar);
-        switchToNews();
+        switchToNotice();
     }
 
 
@@ -96,7 +99,15 @@ public class MainActivity extends AppCompatActivity {
 //        mToolbar.setTitle(R.string.navigation_book);
     }
     private void switchToNews() {
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, new NewsFragment()).commit();
+        NewsFragment nf= new NewsFragment();
+        nf.setType("新闻");
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, nf).commit();
+//        mToolbar.setTitle(R.string.navigation_book);
+    }
+    private void switchToNotice() {
+       NewsFragment nf= new NewsFragment();
+       nf.setType("通知");
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_content,nf ).commit();
 //        mToolbar.setTitle(R.string.navigation_book);
     }
 //    @Override

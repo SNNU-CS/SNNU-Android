@@ -1,6 +1,8 @@
 package io.github.zhaoqi99.snnu_android;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

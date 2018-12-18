@@ -1,5 +1,7 @@
 package io.github.zhaoqi99.snnu_android;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,8 +46,20 @@ public class mNoticeRecyclerViewAdapter extends RecyclerView.Adapter<mNoticeRecy
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.notice_recycler_layout,parent,false);
-        ViewHolder holder = new ViewHolder(view);
+        final View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.notice_recycler_layout,parent,false);
+        final ViewHolder holder = new ViewHolder(view);
+        holder.Title.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int position=holder.getAdapterPosition();
+                String url=messageList.get(position).GetLink();
+                Uri uri=Uri.parse(url);
+                Intent intent=new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.setData(uri);
+                v.getContext().startActivity(intent);
+            }
+        });
         return holder;
     }
 }

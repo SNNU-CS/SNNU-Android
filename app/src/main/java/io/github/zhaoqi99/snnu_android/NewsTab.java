@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Tab extends Fragment {
+public class NewsTab extends Fragment {
     private RecyclerView recyclerView;
     private mNoticeRecyclerViewAdapter mNoticeRecyclerViewAdapter;
 
@@ -40,7 +40,7 @@ public class Tab extends Fragment {
     ArrayList<NoticeMessage> newsList = new ArrayList<>();
     String result;
 
-    public Tab() {
+    public NewsTab() {
         // Required empty public constructor
     }
 
@@ -70,7 +70,6 @@ public class Tab extends Fragment {
 
         @Override
         protected void onPostExecute(String result) {
-            newsList.add(new NoticeMessage("title", "date", "link", "dasda", "da"));
             newsList=getNotice(result);
             mNoticeRecyclerViewAdapter = new mNoticeRecyclerViewAdapter(newsList);
             LinearLayoutManager layoutManager = new LinearLayoutManager(view.getContext());

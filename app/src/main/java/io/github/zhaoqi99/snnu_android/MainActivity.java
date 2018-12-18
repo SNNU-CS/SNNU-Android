@@ -45,11 +45,18 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.navigation_item_notice:
-                        Toast.makeText(MainActivity.this, "x", Toast.LENGTH_SHORT).show();
                         switchToNotice();
                         break;
                     case R.id.navigation_item_news:
                         switchToNews();
+                        break;
+                    case R.id.navigation_card:
+                        switchToCard();
+                        Toast.makeText(MainActivity.this, "x", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.navigation_item_lib:
+                        break;
+                    case R.id.navigation_item_jwc:
                         break;
                     case R.id.navigation_item_about:
                         switchToAbout();
@@ -108,6 +115,10 @@ public class MainActivity extends AppCompatActivity {
        NewsFragment nf= new NewsFragment();
        nf.setType("通知");
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_content,nf ).commit();
+//        mToolbar.setTitle(R.string.navigation_book);
+    }
+    private void switchToCard() {
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_content,new CardFragment() ).commit();
 //        mToolbar.setTitle(R.string.navigation_book);
     }
 //    @Override

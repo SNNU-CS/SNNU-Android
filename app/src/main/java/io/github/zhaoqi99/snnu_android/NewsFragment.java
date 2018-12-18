@@ -1,7 +1,7 @@
 package io.github.zhaoqi99.snnu_android;
 
 
-import android.os.AsyncTask;
+;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -12,9 +12,6 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.ksoap2.serialization.SoapObject;
-import org.ksoap2.serialization.SoapSerializationEnvelope;
-import org.ksoap2.transport.HttpTransportSE;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -56,7 +53,7 @@ public class NewsFragment extends Fragment {
         
         String keys[]={"学校主页","学生处","计算机科学学院","教务处"};
         for (String s:keys) {
-            Tab t=new Tab();
+            NewsTab t=new NewsTab();
             t.setDep(s);
             t.setType(type);
             mFragmentList.add(t);

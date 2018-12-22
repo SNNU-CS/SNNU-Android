@@ -6,4 +6,5 @@
     <color name="red_background">#FF0000</color>
     <color name="colorDrawerHeader">#3BCAB7</color>
     <color name="colorDrawerBackground">#FFFFFF</color>
+    <color name="colorNews">#FAFAFA</color>
 </resources>

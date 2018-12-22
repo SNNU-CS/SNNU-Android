@@ -1,11 +1,13 @@
 package io.github.zhaoqi99.snnu_android;
 
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import io.github.zhaoqi99.snnu_android.Model.BorrowInfoModel;
@@ -28,7 +30,7 @@ public class mBookInfoRecyclerViewAdapter extends RecyclerView.Adapter <mBookInf
         TextView deadline;
         TextView loc;
         TextView campus;
-
+        CardView cardView;
         public ViewHolder(View view)
         {
             super(view);
@@ -38,6 +40,7 @@ public class mBookInfoRecyclerViewAdapter extends RecyclerView.Adapter <mBookInf
             deadline=(TextView)view.findViewById(R.id.bookInfo_deadline);
             loc=(TextView)view.findViewById(R.id.bookInfo_loc);
             campus=(TextView)view.findViewById(R.id.bookInfo_campus);
+            cardView=(CardView)view.findViewById(R.id.card_view_book);
         }
     }
     @Override
@@ -47,10 +50,12 @@ public class mBookInfoRecyclerViewAdapter extends RecyclerView.Adapter <mBookInf
 
     @Override
     public void onBindViewHolder(mBookInfoRecyclerViewAdapter.ViewHolder holder, int position) {
+        SimpleDateFormat sft=new SimpleDateFormat("yyyy-MM-dd");
         BorrowInfoModel.Result message = resultList.get(position);
-        holder.deadline.setText("保留结束日期"+message.get保留结束日期().toString());
         holder.user.setText("预约者:"+message.get预约者());
         holder.bookname.setText("书名:"+message.get书名());
+        holder.author.setText("著者:"+message.get著者());
+        holder.deadline.setText("保留结束日期:"+sft.format(message.get保留结束日期()));
         holder.loc.setText("取书地点:"+message.get取书地点());
         holder.campus.setText("单册分馆:"+message.get单册分馆());
     }

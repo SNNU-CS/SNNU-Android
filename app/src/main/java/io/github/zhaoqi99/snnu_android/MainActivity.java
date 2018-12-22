@@ -15,6 +15,12 @@ import android.widget.Toast;
 
 import com.stephentuso.welcome.WelcomeHelper;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import br.com.forusers.heinsinputdialogs.HeinsDatePickerDialog;
+import br.com.forusers.heinsinputdialogs.interfaces.OnSelectDateListener;
+
 public class MainActivity extends AppCompatActivity {
 
     WelcomeHelper welcomeScreen;
@@ -22,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     Toolbar mToolBar;
 
-
+    HeinsDatePickerDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +79,18 @@ public class MainActivity extends AppCompatActivity {
         });
         setSupportActionBar(mToolBar);
         switchToNotice();
+        dialog = new HeinsDatePickerDialog();
+        dialog.setListener(new OnSelectDateListener() {
+            @Override
+            public void onSelectDate(Date date) throws Exception {
+                Toast.makeText(getApplicationContext(), "clicked refresh", Toast.LENGTH_SHORT).show();
+                SearchNoticeFragment nf= new SearchNoticeFragment();
+                nf.setType(mToolBar.getTitle().toString());
+                SimpleDateFormat sft=new SimpleDateFormat("yyyy-MM-dd");
+                nf.setDate(sft.format(date));
+                getSupportFragmentManager().beginTransaction().replace(R.id.frame_content,nf ).commit();
+            }
+        });
     }
 
     @Override
@@ -107,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
                 drawerLayout.openDrawer(GravityCompat.START);
                 break;
             case R.id.search:
-                Toast.makeText(this, " clicked  search", Toast.LENGTH_SHORT).show();
+                dialog.show(getSupportFragmentManager(), getClass().getSimpleName());
                 break;
             case R.id.refresh:
                 Toast.makeText(this, "clicked refresh", Toast.LENGTH_SHORT).show();
@@ -119,31 +137,31 @@ public class MainActivity extends AppCompatActivity {
 
     private void switchToAbout() {
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, new AboutFragment()).commit();
-//        mToolbar.setTitle(R.string.navigation_book);
+        mToolBar.setTitle(R.string.navigation_about);
     }
     private void switchToNews() {
         NewsFragment nf= new NewsFragment();
         nf.setType("新闻");
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_content, nf).commit();
-//        mToolbar.setTitle(R.string.navigation_book);
+        mToolBar.setTitle(R.string.navigation_news);
     }
     private void switchToNotice() {
        NewsFragment nf= new NewsFragment();
        nf.setType("通知");
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_content,nf ).commit();
-//        mToolbar.setTitle(R.string.navigation_book);
+        mToolBar.setTitle(R.string.navigation_notice);
     }
     private void switchToCard() {
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_content,new CardFragment() ).commit();
-//        mToolbar.setTitle(R.string.navigation_book);
+        mToolBar.setTitle(R.string.navigation_card);
     }
     private void switchToJwc() {
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_content,new JwcFragment() ).commitAllowingStateLoss();
-//        mToolbar.setTitle(R.string.navigation_book);
+        mToolBar.setTitle(R.string.navigation_jwc);
     }
     private void switchToBookInfo() {
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_content,new BookInfoFragment() ).commit();
-//        mToolbar.setTitle(R.string.navigation_book);
+        mToolBar.setTitle(R.string.navigation_borrow);
     }
 //    @Override
 //    public void onBackPressed()

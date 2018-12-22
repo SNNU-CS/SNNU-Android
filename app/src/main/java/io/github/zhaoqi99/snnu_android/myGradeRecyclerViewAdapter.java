@@ -45,11 +45,11 @@ public class myGradeRecyclerViewAdapter extends RecyclerView.Adapter<myGradeRecy
     @Override
     public void onBindViewHolder(myGradeRecyclerViewAdapter.ViewHolder holder, int position) {
         GradeModel.Data data = DataList.get(position);
-        String s=data.get课程名();
         holder.name.setText(data.get课程名());
         holder.shuxing.setText(data.get课程属性());
         holder.xuefen.setText(data.get学分());
         holder.score.setText(data.get成绩());
+
     }
 
     @Override

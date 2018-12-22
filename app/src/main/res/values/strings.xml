@@ -17,4 +17,10 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="navigation_news">新闻</string>
+    <string name="navigation_notice">通知</string>
+    <string name="navigation_jwc">教务处</string>
+    <string name="navigation_borrow">预约到馆</string>
+    <string name="navigation_card">校园卡</string>
+    <string name="navigation_about">关于</string>
 </resources>

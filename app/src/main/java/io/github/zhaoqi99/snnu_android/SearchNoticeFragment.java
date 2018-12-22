@@ -22,42 +22,51 @@ import io.github.zhaoqi99.snnu_android.Model.NoticeMessage;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NewsTab extends Fragment {
-    private RecyclerView recyclerView;
-    private mNoticeRecyclerViewAdapter mNoticeRecyclerViewAdapter;
+public class SearchNoticeFragment extends Fragment {
 
-    public void setDep(String dep) {
-        this.dep = dep;
+    private mNoticeRecyclerViewAdapter mNoticeRecyclerViewAdapter;
+    ArrayList<NoticeMessage> newsList = new ArrayList<>();
+    String result;
+
+    public String getDate() {
+        return date;
     }
 
-    private String dep;
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    String date;
+    private RecyclerView recyclerView;
+    View view;
+    String type;
+
+    public String getType() {
+        return type;
+    }
 
     public void setType(String type) {
         this.type = type;
     }
 
-    private String type;
-    View view;
-    ArrayList<NoticeMessage> newsList = new ArrayList<>();
-    String result;
-
-    public NewsTab() {
+    public SearchNoticeFragment() {
         // Required empty public constructor
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         QueryTask queryTask=new QueryTask();
-        queryTask.execute(dep);
+        queryTask.execute(date);
 
         view = inflater.inflate(R.layout.fragment_tab, container, false);
         recyclerView = view.findViewById(R.id.recycler_view);
         return view;
     }
 
-   private class QueryTask extends AsyncTask<String, Integer, String> {
+    private class QueryTask extends AsyncTask<String, Integer, String> {
 
         @Override
         protected String doInBackground(String... strings) {
@@ -78,24 +87,24 @@ public class NewsTab extends Fragment {
             recyclerView.setAdapter(mNoticeRecyclerViewAdapter);
         }
 
-        private void getRemoteInfo(String dep) throws Exception {
+        private void getRemoteInfo(String date) throws Exception {
             String Target_URL = "";
             String namespace = "";
             String methodName = " ";
             if(type=="通知")
             {
-               Target_URL = "http://118.24.104.99:8080/Notice.asmx";
+                Target_URL = "http://118.24.104.99:8080/Notice.asmx";
                 namespace = "http://webxml.zhaoqi.vip/";
-               methodName = "getNoticeByDepartment ";
+                methodName = "getNoticeByDate";
             }
             else
             {
                 Target_URL = "http://118.24.104.99:8080/News.asmx";
                 namespace = "http://webxml.zhaoqi.vip/";
-                methodName = "getNewsByDepartment ";
+                methodName = "getNewsByDate";
             }
             SoapObject request = new SoapObject(namespace, methodName);
-            request.addProperty("dep", dep);
+            request.addProperty("date", date);
             SoapSerializationEnvelope envelope = new
                     SoapSerializationEnvelope(SoapSerializationEnvelope.VER12);
             envelope.bodyOut = request;

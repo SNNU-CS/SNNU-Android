@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "x", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.navigation_item_lib:
+                        switchToBookInfo();
                         break;
                     case R.id.navigation_item_jwc:
                         Intent intent=new Intent(MainActivity.this,LoginActivity.class);
@@ -138,6 +139,10 @@ public class MainActivity extends AppCompatActivity {
     }
     private void switchToJwc() {
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_content,new JwcFragment() ).commitAllowingStateLoss();
+//        mToolbar.setTitle(R.string.navigation_book);
+    }
+    private void switchToBookInfo() {
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_content,new BookInfoFragment() ).commit();
 //        mToolbar.setTitle(R.string.navigation_book);
     }
 //    @Override

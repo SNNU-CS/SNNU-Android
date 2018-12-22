@@ -57,7 +57,7 @@ public class NewsTab extends Fragment {
         return view;
     }
 
-    private class QueryTask extends AsyncTask<String, Integer, String> {
+   private class QueryTask extends AsyncTask<String, Integer, String> {
 
         @Override
         protected String doInBackground(String... strings) {

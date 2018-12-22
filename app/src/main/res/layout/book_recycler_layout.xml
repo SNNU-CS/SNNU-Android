@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/bookInfo_bookname"
+        android:layout_width="match_parent"
+        android:textSize="@dimen/bookinfo_text_size"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/bookInfo_author"
+        android:layout_width="match_parent"
+        android:textSize="@dimen/bookinfo_text_size"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/bookInfo_campus"
+        android:layout_width="match_parent"
+        android:textSize="@dimen/bookinfo_text_size"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/bookInfo_user"
+        android:layout_width="match_parent"
+        android:textSize="@dimen/bookinfo_text_size"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/bookInfo_loc"
+        android:layout_width="match_parent"
+        android:textSize="@dimen/bookinfo_text_size"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/bookInfo_deadline"
+        android:layout_width="match_parent"
+        android:textSize="@dimen/bookinfo_text_size"
+        android:layout_height="wrap_content" />
+</LinearLayout>

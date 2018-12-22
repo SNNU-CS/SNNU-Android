@@ -11,14 +11,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import org.ksoap2.serialization.SoapObject;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
 import java.util.ArrayList;
-import java.util.List;
+
+import io.github.zhaoqi99.snnu_android.Model.CardMessage;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -79,7 +79,7 @@ public class CardFragment extends Fragment {
         }
 
         private void getRemoteInfo(String id) throws Exception {
-            String Target_URL = "http://webxml.zhaoqi.vip/CampusCard.asmx";
+            String Target_URL = "http://http://118.24.104.99:8080/CampusCard.asmx";
             String namespace = "http://webxml.zhaoqi.vip/";
             String methodName = "getConsumptionDdetails";
             SoapObject request = new SoapObject(namespace, methodName);

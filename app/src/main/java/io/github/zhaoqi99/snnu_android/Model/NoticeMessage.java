@@ -1,4 +1,4 @@
-package io.github.zhaoqi99.snnu_android;
+package io.github.zhaoqi99.snnu_android.Model;
 
 import java.io.Serializable;
 

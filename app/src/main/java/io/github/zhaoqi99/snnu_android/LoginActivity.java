@@ -3,6 +3,7 @@ package io.github.zhaoqi99.snnu_android;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -19,7 +20,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -29,17 +29,14 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+
+import io.github.zhaoqi99.snnu_android.Model.LoginResult;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -316,7 +313,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         @Override
         protected Boolean doInBackground(Void... params) {
             // TODO: attempt authentication against a network service.
-           String login_url = "http://api.zhaoqi.vip/api/v1/urp/login?username="+mEmail+"&password="+mPassword;
+           String login_url = "http://118.24.104.99/api/v1/urp/login?username="+mEmail+"&password="+mPassword;
             try {
                 String result=httprequest.httpRequest(login_url);
                 if(result==null)
@@ -338,6 +335,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             showProgress(false);
 
             if (success) {
+                Intent intent = getIntent();
+                Bundle data = new Bundle();
+                data.putString("success","true");
+                intent.putExtras(data);
+                LoginActivity.this.setResult(0, intent);
                 finish();
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));

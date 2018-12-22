@@ -9,13 +9,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 
 import java.util.ArrayList;
+
+import io.github.zhaoqi99.snnu_android.Model.GradeModel;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -34,11 +35,12 @@ public class GradeTab extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_tab, container, false);
-        recyclerView = view.findViewById(R.id.recycler_view_grade);
-
         GetTask getTask=new GetTask();
         getTask.execute();
+
+        view = inflater.inflate(R.layout.fragment_grade_tab, container, false);
+        recyclerView = view.findViewById(R.id.recycler_view_grade);
+
         return view;
     }
     private class GetTask extends AsyncTask<Void,Void,GradeModel > {
@@ -63,7 +65,7 @@ public class GradeTab extends Fragment {
         }
 
         private GradeModel getRemoteInfo() throws Exception {
-            String ss=httprequest.httpRequest("http://api.zhaoqi.vip/api/v1/urp/getGrade");
+            String ss=httprequest.httpRequest("http://118.24.104.99:/api/v1/urp/getGrade");
             Gson gson = new GsonBuilder().create();
             gradeModel=gson.fromJson(ss,GradeModel.class);
             return gradeModel;

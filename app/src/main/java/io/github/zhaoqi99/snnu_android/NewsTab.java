@@ -1,8 +1,6 @@
 package io.github.zhaoqi99.snnu_android;
 
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -17,7 +15,8 @@ import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
 import java.util.ArrayList;
-import java.util.List;
+
+import io.github.zhaoqi99.snnu_android.Model.NoticeMessage;
 
 
 /**
@@ -85,13 +84,13 @@ public class NewsTab extends Fragment {
             String methodName = " ";
             if(type=="通知")
             {
-               Target_URL = "http://webxml.zhaoqi.vip/Notice.asmx";
+               Target_URL = "http://118.24.104.99:8080/Notice.asmx";
                 namespace = "http://webxml.zhaoqi.vip/";
                methodName = "getNoticeByDepartment ";
             }
             else
             {
-                Target_URL = "http://webxml.zhaoqi.vip/News.asmx";
+                Target_URL = "http://118.24.104.99:8080/News.asmx";
                 namespace = "http://webxml.zhaoqi.vip/";
                 methodName = "getNewsByDepartment ";
             }

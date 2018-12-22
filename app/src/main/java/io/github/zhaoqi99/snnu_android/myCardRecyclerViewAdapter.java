@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import io.github.zhaoqi99.snnu_android.Model.CardMessage;
+
 public class myCardRecyclerViewAdapter extends  RecyclerView.Adapter<myCardRecyclerViewAdapter.ViewHolder>{
     private List<CardMessage> messageList;
 

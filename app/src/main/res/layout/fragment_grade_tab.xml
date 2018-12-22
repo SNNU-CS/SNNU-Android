@@ -2,15 +2,51 @@
 <FrameLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".NewsTab">
+    android:layout_height="100dp"
+    tools:context=".GradeTab">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.5"
+                android:textAlignment="center"
+                android:text="课程名称"
+                android:textSize="@dimen/grade_text_size"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:textSize="@dimen/grade_text_size"
+                android:text="学分" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:textSize="@dimen/grade_text_size"
+                android:text="属性" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:textSize="@dimen/grade_text_size"
+                android:text="成绩" />
+        </LinearLayout>
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view_grade"
             android:layout_width="match_parent"

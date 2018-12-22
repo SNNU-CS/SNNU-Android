@@ -59,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.navigation_item_jwc:
                         Intent intent=new Intent(MainActivity.this,LoginActivity.class);
-                        startActivity(intent);
-                        switchToJwc();
+                        startActivityForResult(intent,0);
+                        //switchToJwc();
                         break;
                     case R.id.navigation_item_about:
                         switchToAbout();
@@ -74,6 +74,17 @@ public class MainActivity extends AppCompatActivity {
         switchToNotice();
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        //super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 0 && resultCode == 0) {// 取出Intent里的数据
+            String result = data.getStringExtra("success");
+            if(result.equals("true"))
+                switchToJwc();
+            else
+                Toast.makeText(MainActivity.this,"登录失败，请重试!",Toast.LENGTH_LONG).show();
+        }
+    }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -126,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
 //        mToolbar.setTitle(R.string.navigation_book);
     }
     private void switchToJwc() {
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_content,new JwcFragment() ).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_content,new JwcFragment() ).commitAllowingStateLoss();
 //        mToolbar.setTitle(R.string.navigation_book);
     }
 //    @Override

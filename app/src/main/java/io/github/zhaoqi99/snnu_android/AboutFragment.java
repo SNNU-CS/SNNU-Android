@@ -47,15 +47,15 @@ public class AboutFragment extends Fragment {
         Element copyRightsElement = new Element();
         String copyrights = getString(R.string.copy_right)+ Calendar.getInstance().get(Calendar.YEAR);
         copyRightsElement.setTitle(copyrights);
-        //copyRightsElement.setIconDrawable(R.drawable.about_icon_copy_right);
-        copyRightsElement.setIconDrawable(R.drawable.logo);
+        copyRightsElement.setIconDrawable(R.drawable.copyright);
+//        copyRightsElement.setIconDrawable(R.drawable.logo);
         copyRightsElement.setIconTint(mehdi.sakout.aboutpage.R.color.about_item_icon_color);
         copyRightsElement.setIconNightTint(android.R.color.white);
         copyRightsElement.setGravity(Gravity.CENTER);
         copyRightsElement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // Toast.makeText(AboutFragment.this, copyrights, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(AboutFragment.this, copyrights, Toast.LENGTH_SHORT).show();
             }
         });
         return copyRightsElement;

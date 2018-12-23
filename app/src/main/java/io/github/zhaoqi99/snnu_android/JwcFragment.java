@@ -49,7 +49,7 @@ public class JwcFragment extends Fragment {
             mTabTitleList.add(s);
         }
 
-        mFragmentList.add(new GradeTab());
+        mFragmentList.add(new CourseTab());
         mFragmentList.add(new GradeTab());
 
 

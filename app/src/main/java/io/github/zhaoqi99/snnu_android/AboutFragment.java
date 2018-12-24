@@ -32,7 +32,7 @@ public class AboutFragment extends Fragment {
         // Inflate the layout for this fragment
         View aboutPage = new AboutPage(getContext())
                 .isRTL(false)
-                .setImage(R.drawable.logo)//图片
+                .setImage(R.drawable.about_logo)//图片
                 .setDescription("道理我都懂，可我就是不听啊")//介绍
                 .addItem(new Element().setTitle("Version 1.0"))
                 .addGroup("与我联系")
@@ -48,7 +48,7 @@ public class AboutFragment extends Fragment {
         String copyrights = getString(R.string.copy_right)+ Calendar.getInstance().get(Calendar.YEAR);
         copyRightsElement.setTitle(copyrights);
         copyRightsElement.setIconDrawable(R.drawable.copyright);
-//        copyRightsElement.setIconDrawable(R.drawable.logo);
+//        copyRightsElement.setIconDrawable(R.drawable.about_logo);
         copyRightsElement.setIconTint(mehdi.sakout.aboutpage.R.color.about_item_icon_color);
         copyRightsElement.setIconNightTint(android.R.color.white);
         copyRightsElement.setGravity(Gravity.CENTER);

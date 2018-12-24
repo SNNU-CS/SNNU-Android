@@ -11,19 +11,19 @@
         <item
             android:id="@+id/navigation_item_news"
 
-            android:icon="@drawable/iconfont_home"
+            android:icon="@drawable/iconfont_news"
             android:title="新闻" />
         <item
             android:id="@+id/navigation_item_jwc"
-            android:icon="@drawable/iconfont_home"
+            android:icon="@drawable/iconfont_jwc"
             android:title="教务处" />
         <item
             android:id="@+id/navigation_item_lib"
-            android:icon="@drawable/iconfont_home"
+            android:icon="@drawable/iconfont_lib"
             android:title="预约到馆" />
         <item
             android:id="@+id/navigation_card"
-            android:icon="@drawable/iconfont_home"
+            android:icon="@drawable/iconfont_card"
             android:title="校园卡" />
 
         <item

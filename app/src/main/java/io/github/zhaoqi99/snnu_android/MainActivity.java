@@ -83,10 +83,10 @@ public class MainActivity extends AppCompatActivity {
         dialog.setListener(new OnSelectDateListener() {
             @Override
             public void onSelectDate(Date date) throws Exception {
-                Toast.makeText(getApplicationContext(), "clicked refresh", Toast.LENGTH_SHORT).show();
+                SimpleDateFormat sft=new SimpleDateFormat("yyyy-MM-dd");
+                Toast.makeText(getApplicationContext(), sft.format(date), Toast.LENGTH_SHORT).show();
                 SearchNoticeFragment nf= new SearchNoticeFragment();
                 nf.setType(mToolBar.getTitle().toString());
-                SimpleDateFormat sft=new SimpleDateFormat("yyyy-MM-dd");
                 nf.setDate(sft.format(date));
                 getSupportFragmentManager().beginTransaction().replace(R.id.frame_content,nf ).commit();
             }
@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
                 dialog.show(getSupportFragmentManager(), getClass().getSimpleName());
                 break;
             case R.id.refresh:
-                Toast.makeText(this, "clicked refresh", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "刷新中...", Toast.LENGTH_SHORT).show();
                 break;
             default:
         }

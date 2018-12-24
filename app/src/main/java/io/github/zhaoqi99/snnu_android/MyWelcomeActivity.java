@@ -11,17 +11,13 @@ public class MyWelcomeActivity extends WelcomeActivity {
     protected WelcomeConfiguration configuration() {
         return new WelcomeConfiguration.Builder(this)
                 .defaultBackgroundColor(R.color.red_background)
-                .page(new TitlePage(R.drawable.logo,
-                        "Title")
+                .page(new TitlePage(R.drawable.welcome_1,
+                        "")
                 )
-                .page(new BasicPage(R.drawable.logo,
-                        "Header",
-                        "More text.")
+                .page(new BasicPage(R.drawable.welcome_2,
+                        "",
+                        "")
                         .background(R.color.red_background)
-                )
-                .page(new BasicPage(R.drawable.logo,
-                        "Lorem ipsum",
-                        "dolor sit amet.")
                 )
                 .swipeToDismiss(true)
                 .build();

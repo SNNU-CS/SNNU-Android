@@ -313,7 +313,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         @Override
         protected Boolean doInBackground(Void... params) {
             // TODO: attempt authentication against a network service.
-           String login_url = "http://118.24.104.99/api/v1/urp/login?username="+mEmail+"&password="+mPassword;
+           String login_url = "http://118.24.104.99/api/v1/urp/logintemp?username="+mEmail+"&password="+mPassword;
             try {
                 String result=httprequest.httpRequest(login_url);
                 if(result==null)

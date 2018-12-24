@@ -1,4 +1,4 @@
-package io.github.zhaoqi99.snnu_android;
+package io.github.zhaoqi99.snnu_android.Adapter;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import java.util.List;
 
 import io.github.zhaoqi99.snnu_android.Model.NoticeMessage;
+import io.github.zhaoqi99.snnu_android.R;
 
 public class mNoticeRecyclerViewAdapter extends RecyclerView.Adapter<mNoticeRecyclerViewAdapter.ViewHolder>{
     private List<NoticeMessage> messageList;

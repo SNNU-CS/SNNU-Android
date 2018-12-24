@@ -18,6 +18,7 @@ import org.ksoap2.transport.HttpTransportSE;
 
 import java.util.ArrayList;
 
+import io.github.zhaoqi99.snnu_android.Adapter.myCardRecyclerViewAdapter;
 import io.github.zhaoqi99.snnu_android.Model.CardMessage;
 
 /**

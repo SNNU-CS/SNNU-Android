@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.github.zhaoqi99.snnu_android.Adapter.mViewPagerFragmentAdapter;
+
 
 /**
  * A simple {@link Fragment} subclass.

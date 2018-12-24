@@ -1,4 +1,4 @@
-package io.github.zhaoqi99.snnu_android;
+package io.github.zhaoqi99.snnu_android.Adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

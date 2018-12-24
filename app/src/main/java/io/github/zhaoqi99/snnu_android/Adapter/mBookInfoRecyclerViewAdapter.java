@@ -1,4 +1,4 @@
-package io.github.zhaoqi99.snnu_android;
+package io.github.zhaoqi99.snnu_android.Adapter;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 
 import io.github.zhaoqi99.snnu_android.Model.BorrowInfoModel;
+import io.github.zhaoqi99.snnu_android.R;
 
 
 public class mBookInfoRecyclerViewAdapter extends RecyclerView.Adapter <mBookInfoRecyclerViewAdapter.ViewHolder>{

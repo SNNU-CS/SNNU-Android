@@ -1,4 +1,4 @@
-package io.github.zhaoqi99.snnu_android;
+package io.github.zhaoqi99.snnu_android.Adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,6 +9,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import io.github.zhaoqi99.snnu_android.Model.CardMessage;
+import io.github.zhaoqi99.snnu_android.R;
 
 public class myCardRecyclerViewAdapter extends  RecyclerView.Adapter<myCardRecyclerViewAdapter.ViewHolder>{
     private List<CardMessage> messageList;

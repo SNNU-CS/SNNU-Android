@@ -1,4 +1,4 @@
-package io.github.zhaoqi99.snnu_android;
+package io.github.zhaoqi99.snnu_android.Adapter;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -10,6 +10,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import io.github.zhaoqi99.snnu_android.Model.GradeModel;
+import io.github.zhaoqi99.snnu_android.R;
 
 public class myGradeRecyclerViewAdapter extends RecyclerView.Adapter<myGradeRecyclerViewAdapter.ViewHolder> {
     private List<GradeModel.Data> DataList;

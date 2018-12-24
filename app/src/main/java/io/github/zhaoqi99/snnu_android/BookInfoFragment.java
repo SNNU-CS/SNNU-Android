@@ -4,7 +4,6 @@ package io.github.zhaoqi99.snnu_android;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,14 +13,10 @@ import android.view.ViewGroup;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import org.ksoap2.serialization.SoapObject;
-import org.ksoap2.serialization.SoapSerializationEnvelope;
-import org.ksoap2.transport.HttpTransportSE;
-
 import java.util.ArrayList;
 
+import io.github.zhaoqi99.snnu_android.Adapter.mBookInfoRecyclerViewAdapter;
 import io.github.zhaoqi99.snnu_android.Model.BorrowInfoModel;
-import io.github.zhaoqi99.snnu_android.Model.GradeModel;
 
 
 /**

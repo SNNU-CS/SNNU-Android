@@ -16,6 +16,7 @@ import org.ksoap2.transport.HttpTransportSE;
 
 import java.util.ArrayList;
 
+import io.github.zhaoqi99.snnu_android.Adapter.mNoticeRecyclerViewAdapter;
 import io.github.zhaoqi99.snnu_android.Model.NoticeMessage;
 
 
@@ -24,7 +25,7 @@ import io.github.zhaoqi99.snnu_android.Model.NoticeMessage;
  */
 public class NewsTab extends Fragment {
     private RecyclerView recyclerView;
-    private mNoticeRecyclerViewAdapter mNoticeRecyclerViewAdapter;
+    private io.github.zhaoqi99.snnu_android.Adapter.mNoticeRecyclerViewAdapter mNoticeRecyclerViewAdapter;
 
     public void setDep(String dep) {
         this.dep = dep;

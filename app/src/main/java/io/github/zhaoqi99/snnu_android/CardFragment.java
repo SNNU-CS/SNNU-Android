@@ -80,7 +80,7 @@ public class CardFragment extends Fragment {
         }
 
         private void getRemoteInfo(String id) throws Exception {
-            String Target_URL = "http://http://118.24.104.99:8080/CampusCard.asmx";
+            String Target_URL = "http://118.24.104.99:8080/CampusCard.asmx";
             String namespace = "http://webxml.zhaoqi.vip/";
             String methodName = "getConsumptionDdetails";
             SoapObject request = new SoapObject(namespace, methodName);

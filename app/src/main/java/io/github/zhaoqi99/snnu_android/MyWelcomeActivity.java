@@ -10,14 +10,14 @@ public class MyWelcomeActivity extends WelcomeActivity {
     @Override
     protected WelcomeConfiguration configuration() {
         return new WelcomeConfiguration.Builder(this)
-                .defaultBackgroundColor(R.color.red_background)
+                .defaultBackgroundColor(R.color.colorWelcomeBack)
                 .page(new TitlePage(R.drawable.welcome_1,
                         "")
                 )
                 .page(new BasicPage(R.drawable.welcome_2,
                         "",
                         "")
-                        .background(R.color.red_background)
+                        .background(R.color.colorWelcomeBack)
                 )
                 .swipeToDismiss(true)
                 .build();

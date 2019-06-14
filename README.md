@@ -22,18 +22,18 @@
 
 ## Demo
 ### Welcome
-[Welcome](./doc/image/welcome.jpg)
+![Welcome](./doc/image/welcome.png)
 ### 校园通知
-[notice](./doc/image/notice.png)
+![notice](./doc/image/notice.png)
 ### 教务处
-[urp1](./doc/image/urp1.png)
-[urp2](./doc/image/urp2.png)
+![urp1](./doc/image/urp1.png)
+![urp2](./doc/image/urp2.png)
 ### 预约到馆
-[library](./doc/image/library.png)
+![library](./doc/image/library.png)
 ### 校园卡
-[campus](./doc/image/campus.png)
+![campus](./doc/image/campus.png)
 ### 关于
-[about](./doc/image/about.png)
+![about](./doc/image/about.png)
 
 ## 开源协议 & 作者
 * 作者:Qi Zhao([zhaoqi99@outlook.com](mailto:zhaoqi99@outlook.com))

@@ -21,6 +21,7 @@
 * [答辩ppt](《基于Android的校园信息平台》.pptx)
 
 ## Demo
+[![Demo Video](./doc/image/video.jpg)](./doc/SVID_20181225_122328_1.mp4)
 ### Welcome
 ![Welcome](./doc/image/welcome.png)
 ### 校园通知

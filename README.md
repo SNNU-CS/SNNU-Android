@@ -21,20 +21,38 @@
 * [答辩ppt](《基于Android的校园信息平台》.pptx)
 
 ## Demo
-[![Demo Video](./doc/image/video.jpg)](./doc/SVID_20181225_122328_1.mp4)
+[Demo Video](./doc/SVID_20181225_122328_1.mp4)
 ### Welcome
-![Welcome](./doc/image/welcome.png)
+<div align="center">
+<img src="./doc/image/welcome1.jpg" height="330" width="190">
+<img src="./doc/image/welcome2.jpg" height="330" width="190">
+</div>
+
 ### 校园通知
-![notice](./doc/image/notice.png)
+<div align="center">
+<img src="./doc/image/notice.png" height="330" width="190">
+</div>
+
 ### 教务处
-![urp1](./doc/image/urp1.png)
-![urp2](./doc/image/urp2.png)
+<div align="center">
+<img src="./doc/image/urp1.png" height="330" width="190" >
+<img src="./doc/image/urp2.png" height="330" width="190" >
+ </div>
+
 ### 预约到馆
-![library](./doc/image/library.png)
+<div align="center">
+<img src="./doc/image/library.png" height="330" width="190">
+</div>
+
 ### 校园卡
-![campus](./doc/image/campus.png)
+<div align="center">
+<img src="./doc/image/campus.png" height="330" width="190">
+</div>
+
 ### 关于
-![about](./doc/image/about.png)
+<div align="center">
+<img src="./doc/image/about.png" height="330" width="190">
+</div>
 
 ## 开源协议 & 作者
 * 作者:Qi Zhao([zhaoqi99@outlook.com](mailto:zhaoqi99@outlook.com))

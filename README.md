@@ -1,4 +1,5 @@
 # SNNU-Android
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b35daf559e8d4a2fac0d01eac698c1df)](https://app.codacy.com/app/ZhaoQi99/SNNU-Android?utm_source=github.com&utm_medium=referral&utm_content=snnucs/SNNU-Android&utm_campaign=Badge_Grade_Settings)
 [![GitHub license](https://img.shields.io/github/license/ZhaoQi99/SNNU-Android.svg)](https://github.com/ZhaoQi99/SNNU-Android/blob/master/LICENSE)
 ## 简介
 * 项目名称:基于C#和Python爬虫的校园信息平台 Android端

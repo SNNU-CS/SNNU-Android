@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2DADF4</color>
+    <color name="colorPrimaryDark">#1D7DF4</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="red_background">#FF0000</color>
+    <color name="colorWelcomeBack">#2DADF4</color>
+    <color name="colorDrawerHeader">#2DADF4</color>
+    <color name="colorDrawerBackground">#FFFFFF</color>
+    <color name="colorNews">#FAFAFA</color>
+</resources>

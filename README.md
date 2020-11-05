@@ -56,5 +56,10 @@
 </div>
 
 ## 开源协议 & 作者
-* 作者:Qi Zhao([zhaoqi99@outlook.com](mailto:zhaoqi99@outlook.com))
+* 作者:
+
+  - [Qi Zhao](https://github.com/ZhaoQi99)([zhaoqi99@outlook.com](mailto:zhaoqi99@outlook.com))
+  - [jhy](https://github.com/Small-funny)([jiahany@qq.com](mailto:jiahany@qq.com))
+  - [Zhikun Wang](https://github.com/Zikun97)
+  
 * 开源协议:[GNU General Public License v3.0](https://github.com/snnucs/SNNU-Android/blob/master/LICENSE)
